@@ -20,11 +20,8 @@ public class MainActivity extends BaseActivity<MainPresenter> implements IGirlVi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         listview = findViewById(R.id.listview);
-
 //        获取数据
         presenter.fectchData();
-
-
     }
 
     @Override

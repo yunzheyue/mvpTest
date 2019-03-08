@@ -28,6 +28,7 @@ public abstract class BaseActivity<T extends BasePresenter> extends Activity {
 
     @Override
     protected void onDestroy() {
+//        防止内存泄漏
         presenter.detachView();
         super.onDestroy();
     }

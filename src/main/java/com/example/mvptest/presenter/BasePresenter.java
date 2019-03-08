@@ -15,6 +15,7 @@ public abstract class BasePresenter<T> {
 
     protected WeakReference<T> iView;
 
+    //将构造器放在父类，将IView的对象进行软引用包裹
     public BasePresenter(T t) {
         attachView(t);
     }
