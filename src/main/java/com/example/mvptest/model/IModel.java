@@ -17,7 +17,7 @@ public interface IModel {
     void getDataFromNet(LoadLitener onOnLoadedLitener);
 
     interface LoadLitener<T> {
-        void onLoadedLitener(List<T> list);
+        void onLoadedLitener(T data);
         void onErrorListener(String error);
     }
 

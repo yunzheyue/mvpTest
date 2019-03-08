@@ -31,7 +31,7 @@ public class MainPresenter extends BasePresenter<IGrilView> {
     public void fectchData() {
         super.fectchData();
         iGrilView.showLoading();
-        iMainModelIml.getDataFromNet(new IModel.LoadLitener<Girl>() {
+        iMainModelIml.getDataFromNet(new IModel.LoadLitener<List<Girl>>() {
             @Override
             public void onLoadedLitener(List<Girl> girls) {
                 iGrilView.showGirlsList(girls);
