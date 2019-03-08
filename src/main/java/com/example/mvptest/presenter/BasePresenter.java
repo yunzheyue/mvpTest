@@ -13,21 +13,26 @@ import java.lang.ref.WeakReference;
 //要获取activity的引用
 public abstract class BasePresenter<T> {
 
-    protected WeakReference<T> weakReference;
+    protected WeakReference<T> iView;
 
+    public BasePresenter(T t) {
+        attachView(t);
+    }
+
+    //   下面操作主要是防止内存泄漏
     public void attachView(T t) {
-//        用软引用进行包裹
-        weakReference = new WeakReference<T>(t);
+        //    用软引用进行包裹
+        iView = new WeakReference<T>(t);
     }
 
     public void detachView() {
-        if (weakReference != null) {
-            weakReference.clear();
-            weakReference = null;
+        if (iView != null) {
+            iView.clear();
+            iView = null;
         }
     }
 
-    //    获取数据
+    //    获取数据，可能有些页面并不需要，因此没有设置成abstract
     public void fectchData() {
 
     }

@@ -5,6 +5,7 @@ import com.example.mvptest.model.IModel;
 import com.example.mvptest.model.IMainModelIml;
 import com.example.mvptest.view.IGirlView;
 
+import java.lang.ref.WeakReference;
 import java.util.List;
 
 /**
@@ -18,23 +19,22 @@ import java.util.List;
 
 public class MainPresenter extends BasePresenter<IGirlView> {
 
-    private IGirlView iGrilView;
 
     private IMainModelIml iMainModelIml = new IMainModelIml();
 
-
-    public MainPresenter(IGirlView iGrilView) {
-        this.iGrilView = iGrilView;
+    public MainPresenter(IGirlView iGirlView) {
+        super(iGirlView);
     }
+
 
     @Override
     public void fectchData() {
         super.fectchData();
-        iGrilView.showLoading();
+        iView.get().showLoading();
         iMainModelIml.getDataFromNet(new IModel.LoadLitener<List<Girl>>() {
             @Override
             public void onLoadedLitener(List<Girl> girls) {
-                iGrilView.showGirlsList(girls);
+                iView.get().showGirlsList(girls);
             }
 
             @Override

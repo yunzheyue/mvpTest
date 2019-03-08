@@ -24,6 +24,7 @@ public class MainActivity extends BaseActivity<MainPresenter> implements IGirlVi
 //        获取数据
         presenter.fectchData();
 
+
     }
 
     @Override

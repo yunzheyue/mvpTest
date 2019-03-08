@@ -13,7 +13,7 @@ import java.util.List;
  */
 
 
-public interface IGirlView {
+public interface IGirlView extends IView {
 
     void showLoading();
 
