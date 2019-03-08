@@ -3,7 +3,7 @@ package com.example.mvptest.presenter;
 import com.example.mvptest.bean.Girl;
 import com.example.mvptest.model.IModel;
 import com.example.mvptest.model.IMainModelIml;
-import com.example.mvptest.view.IGrilView;
+import com.example.mvptest.view.IGirlView;
 
 import java.util.List;
 
@@ -16,14 +16,14 @@ import java.util.List;
  */
 
 
-public class MainPresenter extends BasePresenter<IGrilView> {
+public class MainPresenter extends BasePresenter<IGirlView> {
 
-    private IGrilView iGrilView;
+    private IGirlView iGrilView;
 
     private IMainModelIml iMainModelIml = new IMainModelIml();
 
 
-    public MainPresenter(IGrilView iGrilView) {
+    public MainPresenter(IGirlView iGrilView) {
         this.iGrilView = iGrilView;
     }
 

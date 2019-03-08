@@ -7,11 +7,11 @@ import android.widget.Toast;
 import com.example.mvptest.adapter.GirlListAdapter;
 import com.example.mvptest.bean.Girl;
 import com.example.mvptest.presenter.MainPresenter;
-import com.example.mvptest.view.IGrilView;
+import com.example.mvptest.view.IGirlView;
 
 import java.util.List;
 
-public class MainActivity extends BaseActivity<MainPresenter> implements IGrilView {
+public class MainActivity extends BaseActivity<MainPresenter> implements IGirlView {
 
     private ListView listview;
 
